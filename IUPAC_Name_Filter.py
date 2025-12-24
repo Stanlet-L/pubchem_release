@@ -1,19 +1,19 @@
 import pandas as pd
 
 # file routes
-# Case 1: X
+# Case 1: Ux
 #input_file = "hydroxyphenyl.csv"
 #output_file = "4-hydroxyphenyl.csv"
-# Case 1: Y1 & Case 2: X
+# Case 1: Uy1 & Case 2: Ux
 #input_file = "dihydroxyphenyl.csv"
 #output_file = "3,4-dihydroxyphenyl.csv"
-# Case 1: Y2
+# Case 1: Uy2
 # input_file = "diol.csv"
 # output_file = "1,2-diol.csv"
-# Case 2: Y1
+# Case 2: Uy1
 # input_file = "hydroxy_methoxyphenyl.csv"
 # output_file = "4-hydroxy-3-methoxyphenyl.csv"
-# Case 2: Y2
+# Case 2: Uy2
 input_file = "hydroxy_methoxyphenyl.csv"
 output_file = "3-hydroxy-4-methoxyphenyl.csv"
 
