@@ -1,28 +1,43 @@
-# Usage
+# Chemical Data Mining Pipeline
 
-For general use, please download the packaged GUI application from the Release section. The GUI version provides a ready-to-use interface and does not require manually running each script.
+A Python-based pipeline for processing PubChem-derived chemical compound datasets and identifying candidate molecules through formula filtering and comparison.
 
-Due to updates in PubChem file naming conventions, users are advised to verify that the downloaded file contains the following required columns prior to use:
+## Overview
 
-	•	Compound_CID
-	•	Molecular_Weight
-	•	IUPAC_Name
-	•	Molecular_Formula
-	•	SMILES
-	•	Linked_PubChem_Literature_Count
-	•	Linked_PubChem_Patent_Count
+This project processes compound records containing molecular formulas, IUPAC names, SMILES strings, molecular weights, and PubChem metadata.
 
-Failure to include these fields may result in unexpected behavior or incomplete analysis.
+The pipeline cleans raw compound data, keeps molecules containing only carbon, hydrogen, and oxygen, compares molecular formulas, and applies rule-based recovery logic to identify additional candidate compounds.
 
-The Python scripts in this repository are provided separately for transparency, maintenance, and workflow reference. If running the scripts manually, please execute them in the following order:
+## Required Input Columns
 
-	1. IUPAC_Name_Filter.py
-    	Cleans the downloaded dataset and keeps only the required columns.
-	2. CHO_selected.py
-    	Filters the dataset to keep molecules containing only C, H, and O.
-	3. Formula_Comparesion.py
-    	Modifies and compares molecular formulas to identify potential new molecules.
-	4. rescue_v1.py
-    	Applies rule-based recovery to rescue potential candidates from the discarded data.
+Before running the scripts, make sure the input dataset contains the following columns:
 
-These scripts automate the data filtering and comparison steps. Further chemical interpretation should be validated separately.
+```text
+Compound_CID
+Molecular_Weight
+IUPAC_Name
+Molecular_Formula
+SMILES
+Linked_PubChem_Literature_Count
+Linked_PubChem_Patent_Count
+```
+
+Missing columns may result in incomplete outputs or runtime errors.
+
+## Workflow & Usage
+
+For general use, download the packaged GUI application from the Release section.
+
+The Python scripts are included for transparency and workflow reference. If running the pipeline manually, execute the scripts in the following order:
+
+```bash
+python src/iupac_name_filter.py          # clean and keep required compound information
+python src/filter_cho_compounds.py       # select molecules containing only C, H, and O
+python src/formula_comparison.py         # compare molecular formulas
+python src/rescue_candidates.py          # recover additional candidates using rule-based filtering
+```
+
+## Notes
+
+This project focuses on data filtering, formula comparison, and candidate extraction.  
+Further chemical interpretation should be validated separately by domain experts.
