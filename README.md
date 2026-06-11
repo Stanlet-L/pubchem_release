@@ -31,10 +31,10 @@ For general use, download the packaged GUI application from the Release section.
 The Python scripts are included for transparency and workflow reference. If running the pipeline manually, execute the scripts in the following order:
 
 ```bash
-python src/IUPAC_Name_Filter.py          # clean and keep required compound information
-python src/CHO_selected.py       # select molecules containing only C, H, and O
-python src/Formula_Comparesion.py         # compare molecular formulas
-python src/rescue_v1.py          # recover additional candidates using rule-based filtering
+python IUPAC_Name_Filter.py          # clean and keep required compound information
+python CHO_selected.py       # select molecules containing only C, H, and O
+python Formula_Comparesion.py         # compare molecular formulas
+python rescue_v1.py          # recover additional candidates using rule-based filtering
 ```
 
 ## Notes
